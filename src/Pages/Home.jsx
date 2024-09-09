@@ -65,7 +65,9 @@ const Home = () => {
                 auth: {
                     token: localStorage.getItem('token')
                 },
-                transports: ["websocket", "polling"]
+                transports: ["websocket", "polling"],
+                    reconnectionAttempts: 5, // Optional: retry on failure
+                    timeout: 20000 // Optional: connection timeout
             });
 
             console.log("connection", socketConnection)
