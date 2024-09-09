@@ -61,7 +61,7 @@ const Home = () => {
 
             setLoading(true)
 
-            const socketConnection = io(import.meta.env.VITE_BACKEND_URL, {
+            const socketConnection = io("wss://chat-app-server-swart.vercel.app", {
                 auth: {
                     token: localStorage.getItem('token')
                 },
